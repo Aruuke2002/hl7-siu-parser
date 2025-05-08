@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["appointment_id", "appointment_datetime", "location", "reason", "patient", "provider"],
+    "properties": {
+      "appointment_id": {
+        "type": "string"
+      },
+      "appointment_datetime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "location": {
+        "type": ["string", "null"]
+      },
+      "reason": {
+        "type": ["string", "null"]
+      },
+      "patient": {
+        "type": "object",
+        "required": ["patient_id", "name", "dob", "gender"],
+        "properties": {
+          "patient_id": { "type": "string" },
+          "name": { "type": "string" },
+          "dob": { "type": "string", "format": "date" },
+          "gender": { "type": "string" }
+        }
+      },
+      "provider": {
+        "type": "object",
+        "required": ["provider_id", "provider_name"],
+        "properties": {
+          "provider_id": { "type": "string" },
+          "provider_name": { "type": "string" }
+        }
+      }
+    }
+  }
+  

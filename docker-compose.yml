@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  h17parser:
+    image: h17parser
+    build:
+      context: .
+      dockerfile: ./Dockerfile
